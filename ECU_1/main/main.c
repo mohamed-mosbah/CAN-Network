@@ -1,17 +1,16 @@
-/* CAN Network Master Example
-*/
-
-/*
- * The following example demonstrates a master node in a TWAI network. The master
- * node is responsible for initiating and stopping the transfer of data messages.
- * The example will execute multiple iterations, with each iteration the master
- * node will do the following:
- * 1) Start the TWAI driver
- * 2) Repeatedly send ping messages until a ping response from slave is received
- * 3) Send start command to slave and receive data messages from slave
- * 4) Send stop command to slave and wait for stop response from slave
- * 5) Stop the TWAI driver
+/* CAN Network Sensor Node
+ *
+ * The following code is for a node in a CAN network. This Node
+ * is responsible for sending data messages for pressure and temperature
+ * on the bus in seperate messages. 
+ * This node does the following:
+ * 1) Initailizes the CAN driver and starts it
+ * 2) Reads the pressure and the temperature from an ABPDRRV015PDSA3 sensor over SPI interface
+ * 3) Converts the pressure measurement to 0.01 milli bar and send it in a CAN frame
+ * 4) Converts the temperature measurement to °C and sends it in a CAN frame
+ * 3) Goes back to 2)
  */
+
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
