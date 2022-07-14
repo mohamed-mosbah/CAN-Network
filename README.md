@@ -5,9 +5,15 @@ ECU_1 is programmed to read data using SPI from an ABPDRRV015PDSA3 sensor which 
 
 ECU_2 is programmed to listen to pressure and temperature frames on the bus and prints them upon receiving.
 
+Video Overview of the working application:
+Hardware: https://youtu.be/kiKiHDHKg5g
+Software: https://youtu.be/EGtzW8QNXfk
+
 ### How to compile
 
 Install esp_idf framework: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html.
+
+Open ESP-IDF CMD
 
 Connect the esp to any USB port and do the following:
 ```bash
